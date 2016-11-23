@@ -1,0 +1,78 @@
+<br/>
+<div layout="row">
+    <div flex>
+        <h3>Thread Tests</h3>
+        <div layout="row" layout-align="end">
+            <div flex="55">
+                <md-input-container class="md-block">
+                    <label>Url EPCIS</label>
+                    <input type="text"
+                           name="urlEpcis"
+                           ng-disabled="vm.isRun"
+                           ng-model="vm.urlEpcis"/>
+                </md-input-container>
+            </div>
+            <div flex="10">
+                <md-input-container class="md-block">
+                    <md-select name="contentType" ng-model="vm.contentType" ng-disabled="vm.isRun">
+                        <md-option value="application/xml">XML</md-option>
+                        <md-option value="application/json">JSON</md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+            <div flex="10">
+                <md-input-container class="md-block">
+                    <md-select name="requestType" ng-model="vm.requestType" ng-disabled="vm.isRun">
+                        <md-option value="get">GET</md-option>
+                        <md-option value="post">POST</md-option>
+                        <md-option value="put">PUT</md-option>
+                        <md-option value="delete">DELETE</md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+            <div flex="10">
+                <md-input-container class="md-block">
+                    <label>Threads</label>
+                    <input type="number"
+                            step="any"
+                            name="threadsQtd"
+                            ng-model="vm.threadsQtd"
+                            ng-change="vm.refreshThreads()"
+                            min="1"
+                            max="100"/>
+
+                </md-input-container>
+            </div>
+            <div flex="2"></div>
+            <div flex="10">
+                <md-input-container class="md-block">
+                    <md-button ng-if="!vm.isRun"
+                                class="md-fab"
+                                aria-label="Play"
+                                ng-click="vm.play()">
+                        <md-icon>play_arrow</md-icon>
+                    </md-button>
+                    <md-button ng-if="vm.isRun"
+                                class="md-fab"
+                               aria-label="Play"
+                               ng-click="vm.stop()">
+                        <md-icon>stop_arrow</md-icon>
+                    </md-button>
+                </md-input-container>
+            </div>
+        </div>
+    </div>
+</div>
+<div layout="row">
+    <div flex="15"></div>
+    <div flex="80">
+        <canvas id="line"
+                class="chart chart-line"
+                chart-data="[vm.chartData.data]"
+                chart-labels="vm.chartData.labels">
+        </canvas>
+    </div>
+    <div flex="15"></div>
+</div>
+
+

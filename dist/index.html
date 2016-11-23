@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="EPCISTests">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="EPCIS Tests">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EPCIS Tests</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="app/build/css/app-style.min.css">
+
+</head>
+
+<body layout="row" md-theme="default">
+
+    <div flex></div>
+
+    <div flex="90" >
+        <md-card>
+            <md-content class="md-padding">
+                <div ng-include="'app/views/shared/header.html'"></div>
+
+
+                <div ng-view></div>
+
+
+
+            </md-content>
+            <div ng-include="'app/views/shared/footer.html'" flex></div>
+        </md-card>
+    </div>
+
+    <div flex></div>
+
+    <script src="app/build/js/app-scripts.min.js"></script>
+    <script src="app/build/js/app-ts.min.js"></script>
+</body>
+</html>
