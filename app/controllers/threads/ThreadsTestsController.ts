@@ -57,14 +57,15 @@ module EPCISTests {
         public executeService(url: string): void{
             var tInfo = new ThreadInfo();
             tInfo.startDate = new Date();
-            this.chartData.addThreadInfo(tInfo);
+
             this.threadsService.executeService(url, this.requestType)
                 .then((data) => {
                     tInfo.stopDate = new Date();
-                    console.log(data);
+                    this.chartData.addThreadInfo(tInfo);
                 })
                 .catch((response) => {
-                    console.log(response);
+                    tInfo.stopDate = new Date();
+                    this.chartData.addThreadInfo(tInfo);
                 });
         }
     }
