@@ -59,16 +59,62 @@
                         <md-icon>stop_arrow</md-icon>
                     </md-button>
                 </md-input-container>
+                <md-input-container class="md-block">
+                    <md-button class="md-fab"
+                               aria-label="Ver labels"
+                               ng-click="vm.aplicarOpcoes()">
+                        <md-icon ng-if="vm.mostrarLabels">visibility</md-icon>
+                        <md-icon ng-if="!vm.mostrarLabels">visibility_off</md-icon>
+                    </md-button>
+
+                </md-input-container>
             </div>
         </div>
     </div>
 </div>
+
 <div layout="row">
-    <div flex="15"></div>
+    <div flex="15" >
+        <div ng-if="vm.isRun" layout="column" layout-align="end">
+            <div flex="500">
+                Stop Time
+                <br>
+                {{ vm.getStopTime() }}
+            </div>
+            <div flex>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+            <div flex>
+                Start Time
+                <br>
+                {{ vm.getStartTime() }}
+            </div>
+        </div>
+    </div>
     <div flex="80">
         <canvas id="line"
                 class="chart chart-line"
-                chart-data="vm.chartData.data"
+                chart-options="vm.optionToRender"
+                chart-data="[vm.chartData.data]"
                 chart-labels="vm.chartData.labels">
         </canvas>
     </div>

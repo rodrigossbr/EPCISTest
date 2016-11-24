@@ -4,6 +4,7 @@
 /// <reference path="../../typings/angular-ui-bootstrap/angular-ui-bootstrap.d.ts" />
 /// <reference path="../../typings/ui-grid/ui-grid.d.ts" />
 /// <reference path="../../typings/toastr/toastr.d.ts" />
+/// <reference path="../../typings/chart.js/chart.js.d.ts" />
 
 /// <reference path="AppConfig.ts" />
 /// <reference path="Modules.ts" />
